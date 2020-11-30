@@ -1,0 +1,75 @@
+﻿@model Models.Framework.KhachHang
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>KhachHang</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenKH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenKH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiaChiKH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiaChiKH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DuongPhoKH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DuongPhoKH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuanHuyenKH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuanHuyenKH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThanhPhoKH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThanhPhoKH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuocGiaKH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuocGiaKH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLanMua)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLanMua)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaKH }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,91 @@
+﻿@model IEnumerable<Model.Framework.ChiTietPhieuNhap>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Main Content -->
+<div id="content">
+
+    <!-- Topbar -->
+    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+        <!-- Sidebar Toggle (Topbar) -->
+        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+        </button>
+
+        <!-- Topbar Search -->
+        <form action=@Url.Action("Index", "ChiTietPhieuNhap", FormMethod.Get) method="Get" class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+            <div class="input-group">
+                @Html.TextBox("SearchString", (string)ViewBag.searchValue)
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="button">
+                        <i class="fas fa-search fa-sm"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <!-- Topbar Navbar --> 
+
+    </nav>
+    <!-- End of Topbar -->
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.PhieuNhap.MaNhanVien)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NSX)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HSD)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SoLuongNhap)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GiaNhap)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ThanhTienNhap)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PhieuNhap.MaNhanVien)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NSX)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HSD)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SoLuongNhap)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GiaNhap)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ThanhTienNhap)
+                    </td>
+                  
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

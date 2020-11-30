@@ -1,0 +1,35 @@
+﻿@model Model.Framework.Kho
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Kho</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ThongTinSanPham.TenSP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThongTinSanPham.TenSP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLuongTrongKho)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuongTrongKho)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaSP }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

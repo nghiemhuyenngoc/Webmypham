@@ -1,0 +1,32 @@
+﻿@model List<Model.CartItem>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/User/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Ảnh</td>
+            <td>Số lượng</td>
+            <td>Đơn giá</td>
+            <td>Thành tiền</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Product.MaSP</td>
+                <td>@item.Product.TenSP</td>
+                <td><img src="~/Assets/product/@item.Product.img" width="100"/></td>
+                <td><input type="text" class="quanity"/></td>
+                <td>@item.Product.GiaBan.GetValueOrDefault(0)</td>
+                <td>@(item.Product.GiaBan.GetValueOrDefault(0) * item.Quantity)</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
